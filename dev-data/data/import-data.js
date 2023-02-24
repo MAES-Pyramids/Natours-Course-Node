@@ -17,11 +17,12 @@ mongoose
     useUnifiedTopology: true
   })
   .then(console.log('DB connection successful!'));
-//--------------------CRUD------------------//
+//------------------Read_File----------------//
 const tours = JSON.parse(
   fs.readFileSync(`${__dirname}/tours-simple.json`, 'utf-8')
 );
-
+//--------------------CRUD------------------//
+// Import data into DB
 async function importData() {
   try {
     await Tour.create(tours);
@@ -31,6 +32,7 @@ async function importData() {
   }
   process.exit();
 }
+// Delete all data from DB
 async function deelteData() {
   try {
     await Tour.deleteMany();
@@ -40,7 +42,7 @@ async function deelteData() {
   }
   process.exit();
 }
-
+// process.argv to check passed arguments
 if (process.argv[2] === '--import') {
   importData();
 } else if (process.argv[2] === '--delete') {
