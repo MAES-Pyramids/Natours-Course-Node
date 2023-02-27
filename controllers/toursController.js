@@ -15,10 +15,17 @@ const Tour = require('./../models/toursmodel');
 //   }
 //   next();
 // };
+//--------------Alias Methods----------------//
+exports.aliasTopTours = (req, res, next) => {
+  req.query.limit = '5';
+  req.query.sort = '-ratingAverage,-price';
+  req.query.fields = 'name,price,ratingAverage,summary,difficulty';
+  next();
+};
 //------------handler functions ------------//
 exports.getAllTours = async (req, res) => {
   try {
-    // Remove Execluded Fields
+    // Remove Excluded Fields
     const filteredQuery = { ...req.query };
     const excludedFields = ['page', 'sort', 'limit', 'fields'];
     excludedFields.forEach(field => delete filteredQuery[field]);

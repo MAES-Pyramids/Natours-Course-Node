@@ -5,6 +5,9 @@ const router = express.Router();
 //------------------ROUTES------------------//
 
 // router.param('id', toursController.checkID);
+router
+  .route('/top_5_rated')
+  .get(toursController.aliasTopTours, toursController.getAllTours);
 
 router
   .route('/')
