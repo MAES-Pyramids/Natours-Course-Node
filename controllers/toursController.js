@@ -17,6 +17,7 @@ exports.getAllTours = async (req, res) => {
       .sort()
       .projection()
       .paginate();
+
     const tours = await features.query;
     res.status(200).json({
       status: 'success',
@@ -97,7 +98,8 @@ exports.deleteTour = async (req, res) => {
     });
   }
 };
-
+//-----------------aggregation pipeline-----------------//
+//--method 1--//
 exports.getTourStats = async (req, res) => {
   try {
     const stats = await Tour.aggregate([
@@ -130,7 +132,7 @@ exports.getTourStats = async (req, res) => {
     });
   }
 };
-
+//--method 2--//
 exports.getMonthlyPlan = async (req, res) => {
   try {
     const year = req.params.year * 1;
