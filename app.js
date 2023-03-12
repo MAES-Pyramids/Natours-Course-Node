@@ -18,6 +18,5 @@ app.use(express.static('public'));
 
 app.use('/api/v1/tours', toursRouter);
 app.use('/api/v1/users', usersRouter);
-
 //-------------------------------------------//
 module.exports = app;
