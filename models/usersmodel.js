@@ -22,7 +22,8 @@ const userSchema = new mongoose.Schema(
     password: {
       type: 'string',
       required: [true, 'A user must have a password'],
-      minlength: 8
+      minlength: 8,
+      select: false
     },
     passwordConfirm: {
       type: 'string',
@@ -41,6 +42,10 @@ const userSchema = new mongoose.Schema(
     toObject: { virtuals: true }
   }
 );
+//-------------------Instance Methods-------------------//
+userSchema.methods.correctPassword = async function(loginPass, userPass) {
+  return await bcrypt.compare(loginPass, userPass);
+};
 //-------------------Managing Password------------------//
 // Note: data will get check by validator before it gets to this document middleware
 userSchema.pre('save', async function(next) {
