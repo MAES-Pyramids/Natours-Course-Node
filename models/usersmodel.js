@@ -35,7 +35,8 @@ const userSchema = new mongoose.Schema(
         },
         message: 'Passwords are not the same!'
       }
-    }
+    },
+    passwordChangedAt: Date
   },
   {
     toJSON: { virtuals: true },
@@ -45,6 +46,16 @@ const userSchema = new mongoose.Schema(
 //-------------------Instance Methods-------------------//
 userSchema.methods.correctPassword = async function(loginPass, userPass) {
   return await bcrypt.compare(loginPass, userPass);
+};
+userSchema.methods.isPasswordChanged = function(JWTtimeStamp) {
+  if (this.passwordChangedAt) {
+    const changedTimeStamp = parseInt(
+      this.passwordChangedAt.getTime() / 1000,
+      10
+    );
+    return JWTtimeStamp < changedTimeStamp;
+  }
+  return false;
 };
 //-------------------Managing Password------------------//
 // Note: data will get check by validator before it gets to this document middleware
