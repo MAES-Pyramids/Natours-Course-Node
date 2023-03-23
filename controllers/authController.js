@@ -15,7 +15,8 @@ exports.signup = catchAsyncError(async (req, res, next) => {
     name: req.body.name,
     email: req.body.email,
     password: req.body.password,
-    passwordConfirm: req.body.passwordConfirm
+    passwordConfirm: req.body.passwordConfirm,
+    role: req.body.role
   });
   const token = signToken(newUser._id);
 
@@ -54,7 +55,7 @@ exports.login = catchAsyncError(async (req, res, next) => {
     token
   });
 });
-
+// ---------------protecting routes-----------------//
 exports.protect = catchAsyncError(async (req, res, next) => {
   // 1) Getting token and check of it's there
   let token;
@@ -66,14 +67,14 @@ exports.protect = catchAsyncError(async (req, res, next) => {
   }
   if (!token)
     return next(
-      new AppError('You are not logged in! Please login to get access.', 401)
+      new AppError('You are not login! Please login to get access.', 401)
     );
 
   // 2) Verification token
   const decoded = await promisify(JWT.verify)(token, process.env.JWT_SECRET);
 
   // 3) Check if user still exists
-  const currentUser = await findById(decoded.id);
+  const currentUser = await User.findById(decoded.id);
   if (!currentUser) {
     return next(
       new AppError(
@@ -84,7 +85,7 @@ exports.protect = catchAsyncError(async (req, res, next) => {
   }
 
   // 4) Check if user changed password after the token was issued
-  if (currentUser.changedPasswordAfter(decoded.iat)) {
+  if (currentUser.isPasswordChanged(decoded.iat)) {
     return next(
       new AppError('User recently changed password! Please log in again.', 401)
     );
@@ -94,3 +95,14 @@ exports.protect = catchAsyncError(async (req, res, next) => {
   req.user = currentUser;
   next();
 });
+// ---------------restricting to roles-----------------//
+exports.restrictTo = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(
+        new AppError('You do not have permission to perform this action', 403)
+      );
+    }
+    next();
+  };
+};
