@@ -1,5 +1,6 @@
 const { promisify } = require('util');
 const User = require('./../models/usersmodel');
+const crypto = require('crypto');
 const catchAsyncError = require('./../utils/catchAsyncError');
 const AppError = require('./../utils/appError');
 const sendEmail = require('./../utils/email');
@@ -98,7 +99,35 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   }
 });
 // Reset password
-exports.resetPassword = catchAsyncError(async (req, res, next) => {});
+exports.resetPassword = catchAsyncError(async (req, res, next) => {
+  // 1) Get user based on the token
+  const hashedToken = crypto
+    .createHash('sha256')
+    .update(req.params.token)
+    .digest('hex');
+
+  const user = await User.findOne({
+    passwordResetToken: hashedToken,
+    passwordResetExpires: { $gt: Date.now() }
+  });
+
+  // 2) If token has not expired, and there is user, set the new password
+  if (!user) {
+    return next(new AppError('Token is invalid or has expired', 400));
+  }
+  // 3) Update changedPasswordAt property for the user
+  user.password = req.body.password;
+  user.passwordConfirm = req.body.passwordConfirm;
+  user.passwordResetToken = undefined;
+  user.passwordResetExpires = undefined;
+  await user.save();
+  // 4) Log the user in, send JWT
+  const token = signToken(user._id);
+  res.status(200).json({
+    status: 'success',
+    token
+  });
+});
 // ---------------protecting routes-----------------//
 exports.protect = catchAsyncError(async (req, res, next) => {
   // 1) Getting token and check of it's there

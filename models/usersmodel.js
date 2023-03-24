@@ -52,9 +52,11 @@ const userSchema = new mongoose.Schema(
   }
 );
 //-------------------Instance Methods-------------------//
+// Check if the password is correct
 userSchema.methods.correctPassword = async function(loginPass, userPass) {
   return await bcrypt.compare(loginPass, userPass);
 };
+// Check if the password was changed after the token was issued
 userSchema.methods.isPasswordChanged = function(JWTtimeStamp) {
   if (this.passwordChangedAt) {
     const changedTimeStamp = parseInt(
@@ -65,6 +67,7 @@ userSchema.methods.isPasswordChanged = function(JWTtimeStamp) {
   }
   return false;
 };
+// Create a password reset token and password expire at for each user and store it in the database
 userSchema.methods.createPasswordResetToken = function() {
   const resetToken = crypto.randomBytes(32).toString('hex');
   this.passwordResetToken = crypto
@@ -78,10 +81,10 @@ userSchema.methods.createPasswordResetToken = function() {
     this.passwordResetToken,
     `Expires: ${this.passwordResetExpires}`
   );
-
   return resetToken;
 };
 //-------------------Managing Password------------------//
+// Encrypt the password before saving it to the database
 // Note: data will get check by validator before it gets to this document middleware
 userSchema.pre('save', async function(next) {
   // Only run this function if password was actually modified
@@ -90,6 +93,12 @@ userSchema.pre('save', async function(next) {
   this.password = await bcrypt.hash(this.password, 12);
   // Delete passwordConfirm field
   this.passwordConfirm = undefined;
+});
+// Set the passwordChangedAt property to the current time before saving the document
+userSchema.pre('save', function(next) {
+  if (!this.isModified('password') || this.isNew) return next();
+  this.passwordChangedAt = Date.now() - 1000;
+  next();
 });
 //-------------------------Model------------------------//
 const User = mongoose.model('User', userSchema);
