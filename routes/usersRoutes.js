@@ -7,6 +7,8 @@ const router = express.Router();
 //-------------Users Routes-----------------//
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
+//------------------------------------------//
+router.post('/forgotPassword', authController.forgotPassword);
 //---------------Admin Routes---------------//
 router
   .route('/')
