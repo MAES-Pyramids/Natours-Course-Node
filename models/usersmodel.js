@@ -67,7 +67,7 @@ userSchema.methods.isPasswordChanged = function(JWTtimeStamp) {
   }
   return false;
 };
-// Create a password reset token and password expire at for each user and store it in the database
+// Create a password reset token and password reset expire at for each user and store it in the database
 userSchema.methods.createPasswordResetToken = function() {
   const resetToken = crypto.randomBytes(32).toString('hex');
   this.passwordResetToken = crypto

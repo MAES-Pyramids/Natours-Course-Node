@@ -10,11 +10,14 @@ router.post('/login', authController.login);
 //------------------------------------------//
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
+//------------------------------------------//
 router.patch(
   '/updatePassword',
   authController.protect,
   authController.updatePassword
 );
+//------------------------------------------//
+router.patch('/UpdateMe', authController.protect, usersController.UpdateMe);
 
 //---------------Admin Routes---------------//
 router
