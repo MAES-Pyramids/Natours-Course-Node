@@ -18,7 +18,7 @@ router.patch(
 );
 //------------------------------------------//
 router.patch('/UpdateMe', authController.protect, usersController.UpdateMe);
-
+router.delete('/DeleteMe', authController.protect, usersController.DeleteMe);
 //---------------Admin Routes---------------//
 router
   .route('/')
