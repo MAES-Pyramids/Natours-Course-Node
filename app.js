@@ -1,6 +1,10 @@
 const morgan = require('morgan');
 const express = require('express');
+
 const rateLimit = require('express-rate-limit');
+const helmet = require('helmet');
+const xss = require('xss-clean');
+const mongoSanitize = require('express-mongo-sanitize');
 
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorsController');
@@ -10,17 +14,17 @@ const usersRouter = require('./routes/usersRoutes');
 //-------------------------------------------//
 const app = express();
 //------------Global middleware--------------//
-app.use(express.json());
-app.use(morgan('dev'));
+// Set security HTTP headers
+app.use(helmet());
 
-// Add a timestamp to each request
-app.use((req, res, next) => {
-  req.time = new Date().toISOString();
-  next();
-});
+// Body parser, reading data from body into req.body
+app.use(express.json({ limit: '10kb' }));
 
-// Serve static content located in the "public" directory.
-app.use(express.static('public'));
+// Data sanitization against NoSQL query injection
+app.use(mongoSanitize());
+
+// Data sanitization against XSS
+app.use(xss());
 
 // Implement a simple rate limiting
 const limiter = rateLimit({
@@ -29,6 +33,18 @@ const limiter = rateLimit({
   message: 'Too many requests from this IP, please try again in an hour!'
 });
 app.use('/api', limiter);
+
+// Development logging
+app.use(morgan('dev'));
+
+// Serve static content located in the "public" directory.
+app.use(express.static('public'));
+
+// Add a timestamp to each request
+// app.use((req, res, next) => {
+//   req.time = new Date().toISOString();
+//   next();
+// });
 //--------------Global Routing--------------//
 
 app.use('/api/v1/tours', toursRouter);
