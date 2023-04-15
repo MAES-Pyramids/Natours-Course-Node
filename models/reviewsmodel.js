@@ -72,6 +72,15 @@ reviewsSchema.post('save', function() {
   // this points to current review
   this.constructor.calcAverageRatings(this.tour);
 });
+// Execute on findByIdAndUpdate and findByIdAndDelete
+reviewsSchema.pre(/^findOneAnd/, async function(next) {
+  this.review = await this.findOne();
+  next();
+});
+
+reviewsSchema.post(/^findOneAnd/, async function() {
+  await this.review.constructor.calcAverageRatings(this.review.tour);
+});
 //--------------------Model------------------//
 const Review = mongoose.model('Review', reviewsSchema);
 //--------------------Export-----------------//
