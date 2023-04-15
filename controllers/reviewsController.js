@@ -1,7 +1,8 @@
-const Review = require('./../models/reviewsmodel');
-const APIFeatures = require('./../utils/apiFeatures');
 const catchAsyncError = require('./../utils/catchAsyncError');
+const APIFeatures = require('./../utils/apiFeatures');
+const Review = require('./../models/reviewsmodel');
 const AppError = require('./../utils/appError');
+const factory = require('./handlerFactory');
 //----------------Alias Methods----------------//
 exports.getAllReviews = catchAsyncError(async (req, res, next) => {
   let filter = {};
@@ -67,13 +68,4 @@ exports.updateReview = catchAsyncError(async (req, res, next) => {
     }
   });
 });
-exports.deleteReview = catchAsyncError(async (req, res, next) => {
-  const review = await Review.findByIdAndDelete(req.params.id);
-  if (!review) {
-    return next(new AppError('No reviews found with that ID', 404));
-  }
-  res.status(204).json({
-    status: 'success',
-    data: null
-  });
-});
+exports.deleteReview = factory.deleteOne(Review);
