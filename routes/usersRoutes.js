@@ -17,6 +17,12 @@ router.patch(
   authController.updatePassword
 );
 //------------------------------------------//
+router.get(
+  '/Me',
+  authController.protect,
+  usersController.getMe,
+  usersController.getUser
+);
 router.patch('/UpdateMe', authController.protect, usersController.UpdateMe);
 router.delete('/DeleteMe', authController.protect, usersController.DeleteMe);
 //---------------Admin Routes---------------//
