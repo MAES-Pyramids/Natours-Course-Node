@@ -12,39 +12,10 @@ const filterObj = (obj, ...allowedFields) => {
   return returnedFiled;
 };
 //----------Normal CRUD functions ----------//
-exports.getAllUsers = catchAsyncError(async (req, res, next) => {
-  const users = await User.find();
-  res.status(200).json({
-    status: 'success',
-    results: users.length,
-    users
-  });
-});
-
-exports.createUser = (req, res) => {
-  res.status(500).json({
-    status: 'Fail',
-    time: req.time,
-    message: 'This route is not yet defined'
-  });
-};
-
-exports.getUser = (req, res) => {
-  res.status(500).json({
-    status: 'Fail',
-    time: req.time,
-    message: 'This route is not yet defined'
-  });
-};
-
-exports.updateUser = (req, res) => {
-  res.status(500).json({
-    status: 'Fail',
-    time: req.time,
-    message: 'This route is not yet defined'
-  });
-};
-
+exports.getUser = factory.getOne(User);
+exports.getAllUsers = factory.getAll(User);
+exports.createUser = factory.createOne(User);
+exports.updateUser = factory.updateOne(User);
 exports.deleteUser = factory.deleteOne(User);
 // ------------Active User Operations ----------//
 exports.UpdateMe = catchAsyncError(async (req, res, next) => {

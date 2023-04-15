@@ -1,71 +1,15 @@
-const catchAsyncError = require('./../utils/catchAsyncError');
-const APIFeatures = require('./../utils/apiFeatures');
 const Review = require('./../models/reviewsmodel');
-const AppError = require('./../utils/appError');
 const factory = require('./handlerFactory');
 //----------------Alias Methods----------------//
-exports.getAllReviews = catchAsyncError(async (req, res, next) => {
-  let filter = {};
-  if (req.params.tourID) filter = { tour: req.params.tourID };
-  const features = new APIFeatures(Review.find(filter), req.query)
-    .filter()
-    .sort()
-    .projection()
-    .paginate();
-
-  const reviews = await features.query;
-
-  res.status(200).json({
-    status: 'success',
-    results: reviews.length,
-    reviews
-  });
-});
-exports.createReview = catchAsyncError(async (req, res, next) => {
+exports.setTourUserIds = (req, res, next) => {
   // Allow nested routes
   if (!req.body.tour) req.body.tour = req.params.tourID;
   if (!req.body.user) req.body.user = req.user.id;
-
-  const newReview = await Review.create(req.body);
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      newReview: newReview
-    }
-  });
-});
-exports.getReview = catchAsyncError(async (req, res, next) => {
-  const review = await Review.findById(req.params.id);
-
-  if (!review) {
-    return next(new AppError('No reviews found with that ID', 404));
-  }
-
-  res.status(200).json({
-    status: 'success',
-    review
-  });
-});
-exports.updateReview = catchAsyncError(async (req, res, next) => {
-  const updatedReview = await Review.findByIdAndUpdate(
-    req.params.id,
-    req.body,
-    {
-      new: true,
-      runValidators: true
-    }
-  );
-
-  if (!updatedReview) {
-    return next(new AppError('No reviews found with that ID', 404));
-  }
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      updatedReview
-    }
-  });
-});
+  next();
+};
+//----------Normal CRUD functions ----------//
+exports.getReview = factory.getOne(Review);
+exports.getAllReviews = factory.getAll(Review);
+exports.createReview = factory.createOne(Review);
+exports.updateReview = factory.updateOne(Review);
 exports.deleteReview = factory.deleteOne(Review);

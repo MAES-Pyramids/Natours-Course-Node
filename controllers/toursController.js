@@ -1,6 +1,4 @@
-const APIFeatures = require('./../utils/apiFeatures');
 const catchAsyncError = require('./../utils/catchAsyncError');
-const AppError = require('./../utils/appError');
 const Tour = require('./../models/toursmodel');
 const factory = require('./handlerFactory');
 //--------------Alias Methods----------------//
@@ -10,65 +8,11 @@ exports.aliasTopTours = (req, res, next) => {
   req.query.fields = 'name,price,ratingAverage,summary,difficulty';
   next();
 };
-
-//------------handler functions ------------//
-exports.getAllTours = catchAsyncError(async (req, res, next) => {
-  // Execute Query
-  const features = new APIFeatures(Tour.find(), req.query)
-    .filter()
-    .sort()
-    .projection()
-    .paginate();
-
-  const tours = await features.query;
-  res.status(200).json({
-    status: 'success',
-    results: tours.length,
-    tours
-  });
-});
-
-exports.getTour = catchAsyncError(async (req, res, next) => {
-  const tour = await Tour.findById(req.params.id).populate('reviews');
-
-  if (!tour) {
-    return next(new AppError('No tour found with that ID', 404));
-  }
-
-  res.status(200).json({
-    status: 'success',
-    tour
-  });
-});
-
-exports.createTour = catchAsyncError(async (req, res, next) => {
-  const newTour = await Tour.create(req.body);
-  res.status(200).json({
-    status: 'success',
-    data: {
-      newTour: newTour
-    }
-  });
-});
-
-exports.updateTour = catchAsyncError(async (req, res, next) => {
-  const updatedTour = await Tour.findByIdAndUpdate(req.params.id, req.body, {
-    new: true,
-    runValidators: true
-  });
-
-  if (!updatedTour) {
-    return next(new AppError('No tour found with that ID', 404));
-  }
-
-  res.status(200).json({
-    status: 'success',
-    data: {
-      updatedTour
-    }
-  });
-});
-
+//----------Normal CRUD functions ----------//
+exports.getTour = factory.getOne(Tour, { path: 'reviews' });
+exports.getAllTours = factory.getAll(Tour);
+exports.createTour = factory.createOne(Tour);
+exports.updateTour = factory.updateOne(Tour);
 exports.deleteTour = factory.deleteOne(Tour);
 //-----------------aggregation pipeline-----------------//
 //--method 1--//
