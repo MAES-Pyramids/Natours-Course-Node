@@ -8,20 +8,23 @@ router.post('/signup', authController.signup);
 router.post('/login', authController.login);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
-//------------------------------------------//
+//--------------Active User-----------------//
 router.use(authController.protect);
 
 router.get('/Me', usersController.getMe, usersController.getUser);
 router.patch('/UpdateMe', usersController.UpdateMe);
 router.delete('/DeleteMe', usersController.DeleteMe);
 router.patch('/updatePassword', authController.updatePassword);
+//-------------Super Admin Route-------------//
+router.post(
+  '/',
+  authController.restrictTo('super_admin'),
+  usersController.createUser
+);
 //---------------Admin Routes---------------//
-router
-  .route('/')
-  .get(authController.restrictTo('admin'), usersController.getAllUsers)
-  .post(authController.restrictTo('super_admin'), usersController.createUser);
-
 router.use(authController.restrictTo('admin'));
+router.get('/', usersController.getAllUsers);
+
 router
   .route('/:id')
   .get(usersController.getUser)
