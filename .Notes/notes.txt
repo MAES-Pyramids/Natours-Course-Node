@@ -5,3 +5,4 @@ The app is built using several technologies such as Express, Mongoose, MongoDB A
 The project's goal is to provide a platform for users to easily search and book tours while also providing an easy-to-use and secure payment processing system. The project is intended to be scalable and maintainable, with room for further improvements and feature enhancements in the future.
 
 The app's success can be measured by its ability to provide a seamless user experience and its ability to handle a large number of users and transactions. It is also successful if it meets the client's expectations and goals, which in this case is to provide a reliable and efficient tour booking website.
+//-------------------------------------------------------------------------------------------------------------------------------//
