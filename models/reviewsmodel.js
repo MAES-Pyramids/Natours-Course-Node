@@ -26,6 +26,22 @@ const reviewsSchema = new mongoose.Schema({
     required: [true, 'A review must belong to a user']
   }
 });
+
+//---------------Queries Middleware-----------//
+reviewsSchema.pre(/^find/, function(next) {
+  // this.populate({
+  //   path: 'tour',
+  //   select: 'name -_id'
+  // }).populate({
+  //   path: 'user',
+  //   select: 'name photo -_id'
+  // });
+  this.populate({
+    path: 'user',
+    select: 'name photo -_id'
+  });
+  next();
+});
 //--------------------Model------------------//
 const Review = mongoose.model('Review', reviewsSchema);
 //--------------------Export-----------------//

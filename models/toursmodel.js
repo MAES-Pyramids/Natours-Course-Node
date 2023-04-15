@@ -99,17 +99,28 @@ const toursSchema = new mongoose.Schema(
 toursSchema.virtual('durationWeeks').get(function() {
   return this.duration / 7;
 });
-//------------Documents middleware-----------//
-toursSchema.pre('save', function(next) {
-  this.slug = slugify(this.name, { lower: true });
-  next();
+
+//Virtual Populate
+toursSchema.virtual('reviews', {
+  ref: 'Review',
+  foreignField: 'tour',
+  localField: '_id'
 });
+//------------Documents middleware-----------//
 // toursSchema.pre('save', async function(next) {
 //   const guidesPromises = this.guides.map(async id => await User.findById(id));
 //   this.guides = await Promise.all(guidesPromises);
 //   next();
 // });
+toursSchema.pre('save', function(next) {
+  this.slug = slugify(this.name, { lower: true });
+  next();
+});
 //-------------Queries middleware------------//
+// toursSchema.post(/^find/, function(doc, next) {
+//   console.log(`Query took ${(Date.now() - this.start) / 1000} seconds!`);
+//   next();
+// });
 toursSchema.pre(/^find/, function(next) {
   this.find({ secretTour: { $ne: true } });
   this.start = Date.now();
@@ -120,10 +131,6 @@ toursSchema.pre(/^find/, function(next) {
     path: 'guides',
     select: '-__v -passwordChangedAt'
   });
-  next();
-});
-toursSchema.post(/^find/, function(doc, next) {
-  console.log(`Query took ${(Date.now() - this.start) / 1000} seconds!`);
   next();
 });
 //------------Aggregation middleware---------//

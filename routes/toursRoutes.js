@@ -1,5 +1,6 @@
 const express = require('express');
 const toursController = require('./../controllers/toursController');
+const reviewsRouter = require('./reviewsRoutes');
 const authController = require('./../controllers/authController');
 
 //-------------------------------------------//
@@ -13,6 +14,8 @@ router.route('/tour-stats').get(toursController.getTourStats);
 
 router.route('/monthly-plan/:year').get(toursController.getMonthlyPlan);
 // ------------------------------------------//
+router.use('/:tourID/reviews', reviewsRouter);
+
 router
   .route('/')
   .get(authController.protect, toursController.getAllTours)
@@ -35,5 +38,13 @@ router
     authController.restrictTo('admin'),
     toursController.deleteTour
   );
+
+// router
+//   .route('/:tourID/review')
+//   .post(
+//     authController.protect,
+//     authController.restrictTo('user'),
+//     reviewsController.createReview
+//   );
 //-------------------------------------------//
 module.exports = router;
