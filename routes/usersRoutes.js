@@ -3,34 +3,25 @@ const usersController = require('./../controllers/usersController');
 const authController = require('./../controllers/authController');
 //------------------------------------------//
 const router = express.Router();
-//------------------ROUTES------------------//
 //-------------Users Routes-----------------//
 router.post('/signup', authController.signup);
 router.post('/login', authController.login);
-//------------------------------------------//
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
 //------------------------------------------//
-router.patch(
-  '/updatePassword',
-  authController.protect,
-  authController.updatePassword
-);
-//------------------------------------------//
-router.get(
-  '/Me',
-  authController.protect,
-  usersController.getMe,
-  usersController.getUser
-);
-router.patch('/UpdateMe', authController.protect, usersController.UpdateMe);
-router.delete('/DeleteMe', authController.protect, usersController.DeleteMe);
+router.use(authController.protect);
+
+router.get('/Me', usersController.getMe, usersController.getUser);
+router.patch('/UpdateMe', usersController.UpdateMe);
+router.delete('/DeleteMe', usersController.DeleteMe);
+router.patch('/updatePassword', authController.updatePassword);
 //---------------Admin Routes---------------//
 router
   .route('/')
-  .get(usersController.getAllUsers)
-  .post(authController.restrictTo('super_Admin'), usersController.createUser);
+  .get(authController.restrictTo('admin'), usersController.getAllUsers)
+  .post(authController.restrictTo('super_admin'), usersController.createUser);
 
+router.use(authController.restrictTo('admin'));
 router
   .route('/:id')
   .get(usersController.getUser)
