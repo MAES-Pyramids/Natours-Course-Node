@@ -1,4 +1,5 @@
 const catchAsyncError = require('./../utils/catchAsyncError');
+const AppError = require('./../utils/appError');
 const Tour = require('./../models/toursmodel');
 const factory = require('./handlerFactory');
 //--------------Alias Methods----------------//

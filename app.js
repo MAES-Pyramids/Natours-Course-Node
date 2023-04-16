@@ -1,3 +1,4 @@
+const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
 
@@ -15,6 +16,12 @@ const usersRouter = require('./routes/usersRoutes');
 const reviewsRouter = require('./routes/reviewsRoutes');
 //-------------------------------------------//
 const app = express();
+
+// Set the view engine to Pug
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+// Serve static content located in the "public" directory.
+app.use(express.static(path.join(__dirname, 'public')));
 //------------Global middleware--------------//
 // Set security HTTP headers
 app.use(helmet());
@@ -53,15 +60,18 @@ app.use(
   })
 );
 
-// Serve static content located in the "public" directory.
-app.use(express.static('public'));
-
 // Add a timestamp to each request
 // app.use((req, res, next) => {
 //   req.time = new Date().toISOString();
 //   next();
 // });
 //--------------Global Routing--------------//
+app.get('/', (req, res) => {
+  res.status(200).render('base', {
+    tour: 'The Forest Hiker',
+    user: 'Jonas'
+  });
+});
 
 app.use('/api/v1/tours', toursRouter);
 app.use('/api/v1/users', usersRouter);
