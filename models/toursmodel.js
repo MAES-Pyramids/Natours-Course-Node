@@ -144,10 +144,10 @@ toursSchema.pre(/^find/, function(next) {
   next();
 });
 //------------Aggregation middleware---------//
-toursSchema.pre('aggregate', function(next) {
-  this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
-  next();
-});
+// toursSchema.pre('aggregate', function(next) {
+//   this.pipeline().unshift({ $match: { secretTour: { $ne: true } } });
+//   next();
+// });
 //--------------------Model------------------//
 const Tour = mongoose.model('Tour', toursSchema);
 //--------------------Export-----------------//

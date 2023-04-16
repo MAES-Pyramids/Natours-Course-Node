@@ -7,20 +7,29 @@ const authController = require('./../controllers/authController');
 const router = express.Router();
 //------------------ROUTES-------------------//
 router.use('/:tourID/reviews', reviewsRouter);
-// ------------------------------------------//
-router
-  .route('/top_5_rated')
-  .get(toursController.aliasTopTours, toursController.getAllTours);
-
-router.route('/tour-stats').get(toursController.getTourStats);
-
-router
-  .route('/monthly-plan/:year')
-  .get(
-    authController.protect,
-    authController.restrictTo('admin', 'lead-guide', 'guide'),
-    toursController.getMonthlyPlan
-  );
+router.get('/tour-stats', toursController.getTourStats);
+router.get(
+  '/top_5_rated',
+  toursController.aliasTopTours,
+  toursController.getAllTours
+);
+router.get(
+  '/monthly-plan/:year',
+  authController.protect,
+  authController.restrictTo('admin', 'lead-guide', 'guide'),
+  toursController.getMonthlyPlan
+);
+//--------------Geospatial Routes-------------//
+router.get(
+  '/tours-within/:distance/center/:latlng/unit/:unit',
+  authController.protect,
+  toursController.getToursWithin
+);
+router.get(
+  '/distances/:latlng/unit/:unit',
+  authController.protect,
+  toursController.getDistances
+);
 // ------------------------------------------//
 router
   .route('/')
