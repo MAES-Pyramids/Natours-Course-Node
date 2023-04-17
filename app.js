@@ -67,10 +67,10 @@ app.use(
 //   next();
 // });
 //--------------Global Routing--------------//
-app.use('/', viewsRouter);
+app.use('/api/v1/reviews', reviewsRouter);
 app.use('/api/v1/tours', toursRouter);
 app.use('/api/v1/users', usersRouter);
-app.use('/api/v1/reviews', reviewsRouter);
+app.use('/', viewsRouter);
 
 // Handling invalid Routes
 app.all('*', (req, res, next) => {
