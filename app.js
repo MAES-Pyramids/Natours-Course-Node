@@ -12,6 +12,7 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorsController');
 
 const toursRouter = require('./routes/toursRoutes');
+const viewsRouter = require('./routes/viewsRoutes');
 const usersRouter = require('./routes/usersRoutes');
 const reviewsRouter = require('./routes/reviewsRoutes');
 //-------------------------------------------//
@@ -66,13 +67,7 @@ app.use(
 //   next();
 // });
 //--------------Global Routing--------------//
-app.get('/', (req, res) => {
-  res.status(200).render('base', {
-    tour: 'The Forest Hiker',
-    user: 'Jonas'
-  });
-});
-
+app.use('/', viewsRouter);
 app.use('/api/v1/tours', toursRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/reviews', reviewsRouter);
