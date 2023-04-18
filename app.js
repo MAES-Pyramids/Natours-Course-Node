@@ -25,8 +25,20 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 //------------Global middleware--------------//
 // Set security HTTP headers
-app.use(helmet());
-
+app.use(
+  helmet.contentSecurityPolicy({
+    directives: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'", 'https://api.mapbox.com'],
+      workerSrc: ['blob:'],
+      objectSrc: ["'none'"],
+      styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
+      fontSrc: ["'self'", 'https:', 'data:'],
+      imgSrc: ["'self'", 'data:'],
+      connectSrc: ["'self'", 'https://api.mapbox.com']
+    }
+  })
+);
 // Body parser, reading data from body into req.body
 app.use(express.json({ limit: '10kb' }));
 
