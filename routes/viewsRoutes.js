@@ -1,12 +1,13 @@
 const express = require('express');
 const viewsController = require('./../controllers/viewsController');
+const authController = require('./../controllers/authController');
 const AppError = require('./../utils/appError');
 
 //-------------------------------------------//
 const router = express.Router();
 //-------------Views Routes-----------------//
 router.get('/', viewsController.getOverview);
-router.get('/tour/:slug', viewsController.getTour);
+router.get('/tour/:slug', authController.protect, viewsController.getTour);
 router.get('/login', viewsController.getLoginForm);
 
 // Handling invalid Routes

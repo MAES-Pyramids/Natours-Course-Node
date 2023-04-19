@@ -1,6 +1,7 @@
 const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
+const cookieParser = require('cookie-parser');
 
 const rateLimit = require('express-rate-limit');
 const helmet = require('helmet');
@@ -23,6 +24,7 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 // Serve static content located in the "public" directory.
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(cookieParser());
 //------------Global middleware--------------//
 // Set security HTTP headers
 app.use(
