@@ -1,13 +1,14 @@
 /* eslint-disable */
 import '@babel/polyfill';
 import { displayMap } from './mapbox';
-import { login } from './login';
+import { login, logout } from './login';
 import { signup } from './signup';
 // import { updateSettings } from './updateSettings';
 //-------------------------------------------//
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form--login');
 const signupForm = document.querySelector('.form--signup');
+const logoutBtn = document.querySelector('.nav__el--logout');
 
 if (mapBox) {
   const locations = JSON.parse(mapBox.dataset.locations);
@@ -30,5 +31,8 @@ if (signupForm) {
     const passwordConfirm = document.getElementById('passwordConfirm').value;
     signup(name, email, password, passwordConfirm);
   });
+}
+if (logoutBtn) {
+  logoutBtn.addEventListener('click', logout);
 }
 //-------------------------------------------//

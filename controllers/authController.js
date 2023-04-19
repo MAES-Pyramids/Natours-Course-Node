@@ -68,29 +68,41 @@ exports.login = catchAsyncError(async (req, res, next) => {
   // 3) If everything ok, send token to client
   createAndSendToken(user, 200, res);
 });
+//-------------- Logout
+exports.logout = (req, res) => {
+  res.cookie('jwt', 'loggedout', {
+    expires: new Date(Date.now() + 1 * 500),
+    httpOnly: true
+  });
+  res.status(200).json({ status: 'success' });
+};
 //-------------- IsLogin
 exports.isLogin = async (req, res, next) => {
   // 1) verify token
   if (req.cookies.jwt) {
-    const decoded = await promisify(JWT.verify)(
-      req.cookies.jwt,
-      process.env.JWT_SECRET
-    );
-    // 2) Check if user still exists
-    const currentUser = await User.findById(decoded.id);
+    try {
+      const decoded = await promisify(JWT.verify)(
+        req.cookies.jwt,
+        process.env.JWT_SECRET
+      );
+      // 2) Check if user still exists
+      const currentUser = await User.findById(decoded.id);
 
-    if (!currentUser) {
+      if (!currentUser) {
+        return next();
+      }
+
+      // 3) Check if user changed password after the token was issued
+      if (currentUser.isPasswordChanged(decoded.iat)) {
+        return next();
+      }
+
+      // THERE IS A LOGGED IN USER
+      res.locals.user = currentUser;
+      return next();
+    } catch (err) {
       return next();
     }
-
-    // 3) Check if user changed password after the token was issued
-    if (currentUser.isPasswordChanged(decoded.iat)) {
-      return next();
-    }
-
-    // THERE IS A LOGGED IN USER
-    res.locals.user = currentUser;
-    return next();
   }
   return next();
 };
