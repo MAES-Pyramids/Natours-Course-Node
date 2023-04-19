@@ -39,7 +39,7 @@ function createAndSendToken(user, statusCode, res) {
   });
 }
 //------------handler functions ------------//
-// Sign up
+//-------------- Sign up
 exports.signup = catchAsyncError(async (req, res, next) => {
   const newUser = await User.create({
     name: req.body.name,
@@ -50,7 +50,7 @@ exports.signup = catchAsyncError(async (req, res, next) => {
   });
   createAndSendToken(newUser, 201, res);
 });
-// Login
+//-------------- Login
 exports.login = catchAsyncError(async (req, res, next) => {
   const { email, password } = req.body;
   // 1) Check if email and password exist
@@ -68,7 +68,33 @@ exports.login = catchAsyncError(async (req, res, next) => {
   // 3) If everything ok, send token to client
   createAndSendToken(user, 200, res);
 });
-// Update Password
+//-------------- IsLogin
+exports.isLogin = async (req, res, next) => {
+  // 1) verify token
+  if (req.cookies.jwt) {
+    const decoded = await promisify(JWT.verify)(
+      req.cookies.jwt,
+      process.env.JWT_SECRET
+    );
+    // 2) Check if user still exists
+    const currentUser = await User.findById(decoded.id);
+
+    if (!currentUser) {
+      return next();
+    }
+
+    // 3) Check if user changed password after the token was issued
+    if (currentUser.isPasswordChanged(decoded.iat)) {
+      return next();
+    }
+
+    // THERE IS A LOGGED IN USER
+    res.locals.user = currentUser;
+    return next();
+  }
+  return next();
+};
+//-------------- Update Password
 exports.updatePassword = catchAsyncError(async (req, res, next) => {
   // 1) Get user from collection
   const user = await User.findById(req.user.id).select('+password');
@@ -84,7 +110,7 @@ exports.updatePassword = catchAsyncError(async (req, res, next) => {
   createAndSendToken(user, 200, res);
 });
 // ---------------password Reset-----------------//
-// Forget password
+//-------------- Forget password
 exports.forgotPassword = catchAsyncError(async (req, res, next) => {
   // 1) Get user based on POSTed email
   const user = await User.findOne({ email: req.body.email });
@@ -123,7 +149,7 @@ exports.forgotPassword = catchAsyncError(async (req, res, next) => {
     );
   }
 });
-// Reset password
+//-------------- Reset password
 exports.resetPassword = catchAsyncError(async (req, res, next) => {
   // 1) Get user based on the token
   const hashedToken = crypto
