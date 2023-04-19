@@ -12093,6 +12093,9 @@ var logout = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
+
+// data-user=`${JSON.stringify(user)}`
+// const userData = document.getElementById('user');
 exports.logout = logout;
 },{"axios":"../../node_modules/axios/index.js","./alerts":"alerts.js"}],"signup.js":[function(require,module,exports) {
 "use strict";

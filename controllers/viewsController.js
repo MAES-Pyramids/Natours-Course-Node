@@ -28,6 +28,7 @@ exports.getTour = catchAsyncError(async (req, res, next) => {
     });
 });
 exports.getLoginForm = (req, res) => {
+  if (req.isLogin) return res.redirect('/');
   res
     .status(200)
     .set(
@@ -39,6 +40,7 @@ exports.getLoginForm = (req, res) => {
     });
 };
 exports.getSignupForm = (req, res) => {
+  if (req.isLogin) return res.redirect('/');
   res
     .status(200)
     .set(

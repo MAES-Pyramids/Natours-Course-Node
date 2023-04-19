@@ -42,3 +42,6 @@ export const logout = async () => {
     showAlert('error', 'Error logging out! Try again.');
   }
 };
+
+// data-user=`${JSON.stringify(user)}`
+// const userData = document.getElementById('user');
