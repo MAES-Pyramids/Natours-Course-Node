@@ -9,6 +9,7 @@ const router = express.Router();
 router.get('/', viewsController.getOverview);
 router.get('/tour/:slug', authController.protect, viewsController.getTour);
 router.get('/login', viewsController.getLoginForm);
+router.get('/signup', viewsController.getSignupForm);
 
 // Handling invalid Routes
 router.all('*', (req, res, next) => {
