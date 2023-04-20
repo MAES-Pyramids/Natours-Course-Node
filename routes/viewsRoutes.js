@@ -6,12 +6,11 @@ const AppError = require('./../utils/appError');
 //-------------------------------------------//
 const router = express.Router();
 //-------------Views Routes-----------------//
-router.use(authController.isLogin);
-
-router.get('/', viewsController.getOverview);
-router.get('/tour/:slug', authController.protect, viewsController.getTour);
-router.get('/signup', viewsController.getSignupForm);
-router.get('/login', viewsController.getLoginForm);
+router.get('/', authController.isLogin, viewsController.getOverview);
+router.get('/tour/:slug', authController.isLogin, viewsController.getTour);
+router.get('/signup', authController.isLogin, viewsController.getSignupForm);
+router.get('/login', authController.isLogin, viewsController.getLoginForm);
+router.get('/me', authController.protect, viewsController.getAccount);
 
 // Handling invalid Routes
 router.all('*', (req, res, next) => {

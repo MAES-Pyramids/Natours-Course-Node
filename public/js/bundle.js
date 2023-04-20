@@ -12074,7 +12074,7 @@ var logout = /*#__PURE__*/function () {
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', 'Safely Logging out  ........');
             window.setTimeout(function () {
-              location.assign('/');
+              location.assign('/login');
             }, 1000);
           }
           _context2.next = 10;

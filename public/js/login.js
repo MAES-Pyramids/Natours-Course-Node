@@ -35,7 +35,7 @@ export const logout = async () => {
       showAlert('success', 'Safely Logging out  ........');
 
       window.setTimeout(() => {
-        location.assign('/');
+        location.assign('/login');
       }, 1000);
     }
   } catch (err) {
