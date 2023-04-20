@@ -48,10 +48,14 @@ if (updateSettingsBtn) {
 if (updatePasswordBtn) {
   updatePasswordBtn.addEventListener('submit', function(event) {
     event.preventDefault();
-    const passwordCurrent = document.getElementById('password-current').value;
-    const password = document.getElementById('password').value;
-    const passwordConfirm = document.getElementById('password-confirm').value;
-    updatesettings({ passwordCurrent, password, passwordConfirm }, 'password');
+    const currentPassword = document.getElementById('password-current').value;
+    const newPassword = document.getElementById('password').value;
+    const newPasswordConfirm = document.getElementById('password-confirm')
+      .value;
+    updatesettings(
+      { currentPassword, newPassword, newPasswordConfirm },
+      'password'
+    );
   });
 }
 //-------------------------------------------//

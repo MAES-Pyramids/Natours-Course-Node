@@ -41475,32 +41475,38 @@ var updatesettings = /*#__PURE__*/function () {
       while (1) switch (_context.prev = _context.next) {
         case 0:
           _context.prev = 0;
+          if (type === 'password') document.querySelector('.save-password').textContent = 'Updating...';
+          if (type === 'data') document.querySelector('.save-settings').textContent = 'Updating...';
           url = type === 'password' ? "http://127.0.0.1:3000/api/v1/users/updatePassword" : "http://127.0.0.1:3000/api/v1/users/UpdateMe";
-          _context.next = 4;
+          _context.next = 6;
           return (0, _axios.default)({
             method: 'PATCH',
             url: url,
             data: data
           });
-        case 4:
+        case 6:
           res = _context.sent;
           if (res.data.status === 'success') {
             (0, _alerts.showAlert)('success', "".concat(type.toUpperCase(), " Updated successfully!"));
+            if (type === 'password') document.querySelector('.save-password').textContent = 'Save password';
+            if (type === 'data') document.querySelector('.save-settings').textContent = 'Save settings';
             window.setTimeout(function () {
               location.assign('/me');
             }, 1000);
           }
-          _context.next = 11;
+          _context.next = 15;
           break;
-        case 8:
-          _context.prev = 8;
+        case 10:
+          _context.prev = 10;
           _context.t0 = _context["catch"](0);
           (0, _alerts.showAlert)('error', _context.t0.response.data.message);
-        case 11:
+          if (type === 'password') document.querySelector('.save-password').textContent = 'Save password';
+          if (type === 'data') document.querySelector('.save-settings').textContent = 'Save settings';
+        case 15:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[0, 8]]);
+    }, _callee, null, [[0, 10]]);
   }));
   return function updatesettings(_x, _x2) {
     return _ref.apply(this, arguments);
@@ -41692,13 +41698,13 @@ if (updateSettingsBtn) {
 if (updatePasswordBtn) {
   updatePasswordBtn.addEventListener('submit', function (event) {
     event.preventDefault();
-    var passwordCurrent = document.getElementById('password-current').value;
-    var password = document.getElementById('password').value;
-    var passwordConfirm = document.getElementById('password-confirm').value;
+    var currentPassword = document.getElementById('password-current').value;
+    var newPassword = document.getElementById('password').value;
+    var newPasswordConfirm = document.getElementById('password-confirm').value;
     (0, _updateSettings.updatesettings)({
-      passwordCurrent: passwordCurrent,
-      password: password,
-      passwordConfirm: passwordConfirm
+      currentPassword: currentPassword,
+      newPassword: newPassword,
+      newPasswordConfirm: newPasswordConfirm
     }, 'password');
   });
 }
