@@ -1,4 +1,5 @@
 const path = require('path');
+const cors = require('cors');
 const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
@@ -26,6 +27,9 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 //------------Global middleware--------------//
+// Enable CORS
+// app.use(cors());
+
 // Set security HTTP headers
 app.use(
   helmet.contentSecurityPolicy({
