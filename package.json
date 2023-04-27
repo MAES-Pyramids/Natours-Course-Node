@@ -33,10 +33,12 @@
     "mapbox-gl": "^2.14.1",
     "mongoose": "^5.13.16",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "ndb": "^1.1.5",
     "nodemailer": "^6.9.1",
     "nodemon": "^2.0.20",
     "pug": "^3.0.2",
+    "sharp": "^0.32.1",
     "slugify": "^1.6.5",
     "validator": "^13.9.0",
     "xss-clean": "^0.1.1"

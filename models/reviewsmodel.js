@@ -27,7 +27,6 @@ const reviewsSchema = new mongoose.Schema({
     required: [true, 'A review must belong to a user']
   }
 });
-
 //---------------Queries Middleware-----------//
 reviewsSchema.pre(/^find/, function(next) {
   // this.populate({

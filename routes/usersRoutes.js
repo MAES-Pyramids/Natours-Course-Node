@@ -13,7 +13,12 @@ router.patch('/resetPassword/:token', authController.resetPassword);
 router.use(authController.protect);
 
 router.get('/Me', usersController.getMe, usersController.getUser);
-router.patch('/UpdateMe', usersController.UpdateMe);
+router.patch(
+  '/UpdateMe',
+  usersController.uploadUserPhoto,
+  usersController.resizeUserPhoto,
+  usersController.UpdateMe
+);
 router.delete('/DeleteMe', usersController.DeleteMe);
 router.patch('/updatePassword', authController.updatePassword);
 //-------------Super Admin Route-------------//
