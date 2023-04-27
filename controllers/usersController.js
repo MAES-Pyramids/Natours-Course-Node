@@ -29,11 +29,13 @@ const multerFilter = (req, file, cb) => {
   if (file.mimetype.startsWith('image')) cb(null, true);
   else cb(new AppError('Not an image! Please upload only images.', 400), false);
 };
+
 const upload = multer({
   storage: multerStorage,
   fileFilter: multerFilter
 });
 exports.uploadUserPhoto = upload.single('photo');
+//----------------Resize Photos -------------//
 exports.resizeUserPhoto = catchAsyncError(async (req, res, next) => {
   if (!req.file) return next();
 
@@ -59,6 +61,7 @@ exports.UpdateMe = catchAsyncError(async (req, res, next) => {
   }
   // 2) Filtered out unwanted fields names that are not allowed to be updated
   const filteredBody = filterObj(req.body, 'name', 'email');
+  if (req.file) filteredBody.photo = req.file.filename;
 
   // 3) Update user document
   const updatedUser = await User.findByIdAndUpdate(req.user.id, filteredBody, {
