@@ -1,9 +1,9 @@
-const catchAsyncError = require('./../utils/catchAsyncError');
-const AppError = require('./../utils/appError');
-const User = require('./../models/usersmodel');
-const factory = require('./handlerFactory');
-const multer = require('multer');
 const sharp = require('sharp');
+const multer = require('multer');
+const factory = require('./handlerFactory');
+const User = require('./../models/usersmodel');
+const AppError = require('./../utils/appError');
+const catchAsyncError = require('./../utils/catchAsyncError');
 //------------handler functions ------------//
 const filterObj = (obj, ...allowedFields) => {
   const returnedFiled = {};

@@ -1,9 +1,9 @@
-const catchAsyncError = require('./../utils/catchAsyncError');
-const AppError = require('./../utils/appError');
-const Tour = require('./../models/toursmodel');
-const factory = require('./handlerFactory');
 const multer = require('multer');
 const sharp = require('sharp');
+const factory = require('./handlerFactory');
+const Tour = require('./../models/toursmodel');
+const AppError = require('./../utils/appError');
+const catchAsyncError = require('./../utils/catchAsyncError');
 //--------------Alias Methods----------------//
 exports.aliasTopTours = (req, res, next) => {
   req.query.limit = '5';
