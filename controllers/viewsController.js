@@ -41,6 +41,19 @@ exports.getSignupForm = (req, res) => {
     title: 'Create your account!'
   });
 };
+// Reset Password
+exports.getResetPassForm = (req, res) => {
+  if (req.isLogin) return res.redirect('/');
+  res.status(200).render('reset_ask', {
+    title: 'Forget Password'
+  });
+};
+exports.getResetPassPatchForm = (req, res) => {
+  if (req.isLogin) return res.redirect('/');
+  res.status(200).render('reset_patch', {
+    title: 'Reset Password'
+  });
+};
 // Account page
 exports.getAccount = (req, res) => {
   res.status(200).render('account', {

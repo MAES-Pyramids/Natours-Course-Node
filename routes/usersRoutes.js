@@ -1,5 +1,6 @@
 const express = require('express');
 const usersController = require('./../controllers/usersController');
+const viewsController = require('./../controllers/viewsController');
 const authController = require('./../controllers/authController');
 //------------------------------------------//
 const router = express.Router();
@@ -9,6 +10,7 @@ router.post('/login', authController.login);
 router.get('/logout', authController.logout);
 router.post('/forgotPassword', authController.forgotPassword);
 router.patch('/resetPassword/:token', authController.resetPassword);
+router.get('/resetPassword/:token', viewsController.getResetPassPatchForm);
 //--------------Active User-----------------//
 router.use(authController.protect);
 

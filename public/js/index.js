@@ -4,11 +4,15 @@ import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { signup } from './signup';
 import { updatesettings } from './updateSettings';
+import { SendTokenEmail, resetPassword } from './resetPassword';
 //-------------------------------------------//
 const mapBox = document.getElementById('map');
+const ResetButton = document.querySelector('#Reset');
 const loginForm = document.querySelector('.form--login');
+const resetForm = document.querySelector('.form--reset');
 const signupForm = document.querySelector('.form--signup');
 const logoutBtn = document.querySelector('.nav__el--logout');
+const UpdatePassForm = document.querySelector('.form--updatePass');
 const updateSettingsBtn = document.querySelector('.form-user-data');
 const updatePasswordBtn = document.querySelector('.form-user-password');
 
@@ -32,6 +36,23 @@ if (signupForm) {
     const password = document.getElementById('password').value;
     const passwordConfirm = document.getElementById('passwordConfirm').value;
     signup(name, email, password, passwordConfirm);
+  });
+}
+if (resetForm) {
+  resetForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = document.getElementById('email').value;
+    SendTokenEmail(email);
+    ResetButton.textContent = 'Processing...';
+  });
+}
+if (UpdatePassForm) {
+  UpdatePassForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const password = document.getElementById('password').value;
+    const passwordConfirm = document.getElementById('passwordConfirm').value;
+    resetPassword(password, passwordConfirm);
+    ResetButton.textContent = 'Processing...';
   });
 }
 if (logoutBtn) {

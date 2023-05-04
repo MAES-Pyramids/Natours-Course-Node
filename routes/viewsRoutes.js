@@ -9,6 +9,11 @@ const router = express.Router();
 router.get('/', authController.isLogin, viewsController.getOverview);
 router.get('/tour/:slug', authController.isLogin, viewsController.getTour);
 router.get('/signup', authController.isLogin, viewsController.getSignupForm);
+router.get(
+  '/resetPass',
+  authController.isLogin,
+  viewsController.getResetPassForm
+);
 router.get('/login', authController.isLogin, viewsController.getLoginForm);
 router.get('/me', authController.protect, viewsController.getAccount);
 

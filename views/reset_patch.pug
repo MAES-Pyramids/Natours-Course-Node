@@ -1,0 +1,15 @@
+extend base
+
+block content
+  main.main
+    .login-form
+      h2.heading-secondary.ma-bt-lg Create your account!
+      form.form.form--updatePass
+        .form__group.ma-bt-md
+          label.form__label(for='password') Password
+          input#password.form__input(type='password' placeholder='••••••••' required='' minlength='8')
+        .form__group.ma-bt-md
+          label.form__label(for='passwordConfirm') Confirm password
+          input#passwordConfirm.form__input(type='password' placeholder='••••••••' required='' minlength='8')
+        .form__group(style='display:flex; flex-direction: column; align-items: center;')
+          button.btn.btn--green#Reset(type='submit' style='margin-top: 10px;') Change Password
