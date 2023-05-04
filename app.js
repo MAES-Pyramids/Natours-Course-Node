@@ -4,10 +4,11 @@ const morgan = require('morgan');
 const express = require('express');
 const cookieParser = require('cookie-parser');
 
-const rateLimit = require('express-rate-limit');
-const helmet = require('helmet');
 const hpp = require('hpp');
 const xss = require('xss-clean');
+const helmet = require('helmet');
+const compression = require('compression');
+const rateLimit = require('express-rate-limit');
 const mongoSanitize = require('express-mongo-sanitize');
 
 const AppError = require('./utils/appError');
@@ -27,8 +28,11 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 //------------Global middleware--------------//
+// Compress all text sent to clients
+app.use(compression());
+
 // Enable CORS
-// app.use(cors());
+app.use(cors());
 
 // Set security HTTP headers
 app.use(
