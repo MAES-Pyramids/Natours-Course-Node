@@ -45,7 +45,7 @@ Natours provides a highly interactive and user-friendly interface for users to b
 
 Sign Up Page            |  Login Page | Forget Password
 :-------------------------:|:-------------------------:|:-------------------------:
-<img  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Sign%20.gif" width="500" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/login.gif" width="500" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Forget%20.gif" width="500" />
+<img  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Sign%20.gif" width="333" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/login.gif" width="333" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Forget%20.gif" width="333" />
 
 Home Page            |  Tour Details
 :-------------------------:|:-------------------------:
@@ -80,8 +80,10 @@ If you want to book a tour through Natours, simply follow the steps given below:
 Coming soon!
 
 ## Built With
+<img align="right" alt="GIF"  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/dependencies.png"  width="20%" /> 
+
 Natours was built using the following technologies:
-* [Express](http://expressjs.com/) - The web framework used
+* [Express](http://expressjs.com/) - The web framework used 
 * [Mongoose](https://mongoosejs.com/) - Object Data Modelling (ODM) library
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Cloud database service
 * [Pug](https://pugjs.org/api/getting-started.html) - High performance template engine
