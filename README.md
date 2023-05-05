@@ -9,7 +9,9 @@
 <h3 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h3>
 
 ---
+
 # Natours - A Tour Booking Site
+<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="18%" /> 
 Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, tour management for booking tours, as well as checking tours map and users' reviews and ratings. Moreover, Natours allows users to update their profiles with a range of personal details such as their username, photo, email, and password. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
 
 
@@ -30,8 +32,12 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 ## Deployed Version
 You can visit the live demo of Natours by clicking here. 👉 : https://lgope-natours.onrender.com/
 
+|  Program Flow-chart             | 
+| -------                         |
+| <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/Activitydiagram1.png" width="1000" />   | 
+
 ## Key Features
-| Feature                          | Description                                                                                                 |
+| Features                          | Description                                                                                                 |
 |----------------------------------|------------------------------------------------------------------------------------------------------|
 | Authentication & Authorization   | This feature provides users with login and logout functionality to access the system.                  |
 | Tour Management & Modeling       | includes the ability to manage tour bookings, render tour maps, and display user reviews and ratings on each tour. |
@@ -41,6 +47,24 @@ You can visit the live demo of Natours by clicking here. 👉 : https://lgope-na
 
 ## Demonstration
 Natours provides a highly interactive and user-friendly interface for users to book their tours. Some of the major highlights of Natours are:
+
+Sign Up Page            |  Login Page | Forget Password
+:-------------------------:|:-------------------------:|:-------------------------:
+<img  src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.png" width="500" />  | <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.png" width="500" />  | <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.png" width="500" />
+
+Home Page            |  Tour Details
+:-------------------------:|:-------------------------:
+  A highly intuitive and aesthetically pleasing home page that greets users with a visually appealing animation.<img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/1.png" width="500" />  |  Users can view detailed information about tours, including images, ratings, and reviews.  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/2.png" width="500" />
+
+Payment Process            |  Booked Tours
+:-------------------------:|:-------------------------:
+A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" width="500" />  | Users can view a list of all the tours they have booked.   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png" width="500" />
+  
+User Profile            |  Admin Profile
+:-------------------------:|:-------------------------:
+Users can update their profiles, including their names, profile pictures, email addresses, and passwords.  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" width="500" />  |  Administrators can manage the website and view detailed information about the tours and users.  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png" width="500" />
+
+---
 
 - Home Page
 A highly intuitive and aesthetically pleasing home page that greets users with a visually appealing animation.
@@ -105,6 +129,10 @@ Coming soon!
 ## Acknowledgement
 * This project is part of the online course I've taken at Udemy. Thanks to Jonas Schmedtmann for creating this awesome course! Link to the course: [Node.js, Express, MongoDB & More](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp)
 
----
+
 ## Assistance
-If you require any assistance or have any questions, suggestions, or concerns, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any way I can. Thank you for your time and consideration! 🙂
+If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any. Thank you for your time and consideration! 🙂
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"  width="100%"/>
+</p>
