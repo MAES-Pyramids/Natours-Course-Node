@@ -7,7 +7,8 @@
 </h1>
 
 # Natours - A Tour Booking Site
-Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, Users can search for tours, book them, manage their bookings, and update their profiles. The app also provides API endpoints for accessing information about tours, tour stats, top 5 cheap tours, and tours within a radius. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
+Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, Users can search for tours, book them, manage their bookings, and update their profiles. The app also provides API endpoints for accessing information about tours, tour stats, top 5 cheap tours, and tours within a radius.
+Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
 
 # Table of Contents
 - <a href="#deployed-version">Deployed Version</a><br>
@@ -26,9 +27,9 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 ## Deployed Version
 You can visit the live demo of Natours by clicking here. 👉 : https://lgope-natours.onrender.com/
 
-|  Program Flow-chart             | 
+| Components            | 
 | -------                         |
-| <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/Activitydiagram1.png" width="1000" />   | 
+| <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/wakatime.png" width="1000" />   | 
 
 ## Key Features
 | Features                          | Description                                                                                                 |
