@@ -107,4 +107,4 @@ Coming soon!
 
 ---
 ## Assistance
-If you require any assistance or have any questions, suggestions, or concerns, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any way I can. Additionally, I would be delighted to hear your thoughts on my work. Whether it's feedback, constructive criticism, or comments, your opinion is valuable to me. Thank you for your time and consideration! 🙂
+If you require any assistance or have any questions, suggestions, or concerns, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any way I can. Thank you for your time and consideration! 🙂
