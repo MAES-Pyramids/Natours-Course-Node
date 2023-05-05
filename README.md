@@ -5,13 +5,11 @@
   Natours
   <br>
 </h1>
-<h3 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h3>
----
+<h4 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h4>
 
 # Natours - A Tour Booking Site
-<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="25%" /> 
+<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="20%" /> 
 Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, Users can search for tours, book them, manage their bookings, and update their profiles. The app also provides API endpoints for accessing information about tours, tour stats, top 5 cheap tours, and tours within a radius. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
-
 
 # Table of Contents
 - <a href="#deployed-version">Deployed Version</a><br>
@@ -28,6 +26,7 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 - <a href="#acknowledgement">Acknowledgement</a><br>
 
 ## Deployed Version
+The project's goal is to provide a platform for users to easily search and book tours while also providing an easy-to-use and secure payment processing system. The project is intended to be scalable and maintainable, with room for further improvements and feature enhancements in the future. <br>
 You can visit the live demo of Natours by clicking here. 👉 : https://lgope-natours.onrender.com/
 
 |  Program Flow-chart             | 
@@ -61,26 +60,6 @@ A streamlined payment process that allows users to pay for their tours quickly a
 User Profile            |  Admin Profile
 :-------------------------:|:-------------------------:
 Users can update their profiles, including their names, profile pictures, email addresses, and passwords.  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" width="500" />  |  Administrators can manage the website and view detailed information about the tours and users.  <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png" width="500" />
-
----
-
-- Home Page
-A highly intuitive and aesthetically pleasing home page that greets users with a visually appealing animation.
-
-- Tour Details
-Users can view detailed information about tours, including images, ratings, and reviews.
-
-- Payment Process
-A streamlined payment process that allows users to pay for their tours quickly and easily.
-
-- Booked Tours
-Users can view a list of all the tours they have booked.
-
-- User Profile
-Users can update their profiles, including their names, profile pictures, email addresses, and passwords.
-
-- Admin Profile
-Administrators can manage the website and view detailed information about the tours and users.
 
 ---
 ## How To Use
@@ -130,7 +109,7 @@ Coming soon!
 
 
 ## Assistance
-If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any. Thank you for your time and consideration! 🙂
+If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via email at mohamed.11021@stemgharbiya.moe.edu.eg. I would be more than happy to help you in any. <br> Thank you for your time and consideration! 🙂
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"  width="100%"/>
