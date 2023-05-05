@@ -6,11 +6,11 @@
   <br>
 </h1>
 
-<h4 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h4>
+<h3 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h3>
 
 ---
 # Natours - A Tour Booking Site
-Natours is an impressive tour booking site built on top of NodeJS. It provides a range of features such as authentication, authorization, tour management, and user profile updates. Additionally, it also has a credit card payment system.
+Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, tour management for booking tours, as well as checking tours map and users' reviews and ratings. Moreover, Natours allows users to update their profiles with a range of personal details such as their username, photo, email, and password. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
 
 
 # Table of Contents
@@ -60,28 +60,51 @@ Users can update their profiles, including their names, profile pictures, email 
 - Admin Profile
 Administrators can manage the website and view detailed information about the tours and users.
 
+---
 ## How To Use
 If you want to book a tour through Natours, simply follow the steps given below:
-
 1. Login to the site.
 2. Search for tours that you want to book.
 3. Book a tour.
 4. Proceed to the payment checkout page.
 5. Enter the card details (Test Mode):
-Card No.: 4242 4242 4242 4242
-Expiry date: 02 / 22
-CVV: 222
-6. Finished!
+  ```
+  - Card No. : 4242 4242 4242 4242
+  - Expiry date: 02 / 22
+  - CVV: 222
+  ```
+* To access the tour you have booked, go to the "Manage Booking" page located in your user settings. Upon completion of the booking, you will be automatically directed to this page.
+* Keep your profile up-to-date by modifying your username, email, password, and profile picture.
+---
 
-API Usage
+## API Usage and Documentation
 Coming soon!
 
-Deployment
-Coming soon!
-
-Built With
+## Built With
 Natours was built using the following technologies:
+* [Express](http://expressjs.com/) - The web framework used
+* [Mongoose](https://mongoosejs.com/) - Object Data Modelling (ODM) library
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Cloud database service
+* [Pug](https://pugjs.org/api/getting-started.html) - High performance template engine
+* [JSON Web Token](https://jwt.io/) - Security token
+* [ParcelJS](https://parceljs.org/) - Blazing fast, zero configuration web application bundler
+* [Stripe](https://stripe.com/) - Online payment API
+* [Postman](https://www.getpostman.com/) - API testing
+* [Mailtrap](https://mailtrap.io/) & [Mailgun](https://www.mailgun.com/) - Email delivery platform
+* [Render](https://render.com/) - Cloud platform
 
-NodeJS - Backend language
-ExpressJS - Web application framework
-[MongoDB](https://www
+## Deployment
+Coming soon!
+
+## Installation
+Coming soon!
+
+## Future Updates
+Coming soon!
+
+## Acknowledgement
+* This project is part of the online course I've taken at Udemy. Thanks to Jonas Schmedtmann for creating this awesome course! Link to the course: [Node.js, Express, MongoDB & More](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp)
+
+---
+## Assistance
+If you require any assistance or have any questions, suggestions, or concerns, please don't hesitate to contact me via email at mohamedaboelseoud@std.mans.edu.eg. I would be more than happy to help you in any way I can. Additionally, I would be delighted to hear your thoughts on my work. Whether it's feedback, constructive criticism, or comments, your opinion is valuable to me. Thank you for your time and consideration! 🙂
