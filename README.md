@@ -14,10 +14,10 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 - <a href="#deployed-version">Deployed Version</a><br>
 - <a href="#key-features">Key Features</a><br>
 - <a href="#demonstration">Demonstration</a><br>
-- <a href="#api-usage">API Usage</a><br>
+- <a href="#api-usage-and-documentation">API Usage</a><br>
 - <a href="#how-to-use">How To Use</a><br>
 - <a href="#installation">Installation</a><br> 
-- <a href="#build-with">Build With</a><br>
+- <a href="#built-with">Build With</a><br>
 - <a href="#future-updates">Future Updates</a><br> 
 - <a href="#acknowledgement">Acknowledgement</a><br>
 
