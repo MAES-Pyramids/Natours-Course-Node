@@ -25,7 +25,6 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 - <a href="#acknowledgement">Acknowledgement</a><br>
 
 ## Deployed Version
-The project's goal is to provide a platform for users to easily search and book tours while also providing an easy-to-use and secure payment processing system. The project is intended to be scalable and maintainable, with room for further improvements and feature enhancements in the future. <br>
 You can visit the live demo of Natours by clicking here. 👉 : https://lgope-natours.onrender.com/
 
 |  Program Flow-chart             | 
