@@ -1,18 +1,16 @@
 <h1 align="center">
   <br>
-  <a href="https://lakshman-natours.herokuapp.com/"><img src="https://github.com/lgope/Natours/blob/master/public/img/logo-green-round.png" alt="Natours" width="200"></a>
+  <a href="https://lakshman-natours.herokuapp.com/"><img src="https://github.com/lgope/Natours/blob/master/public/img/logo-green-round.png" alt="Natours" width="100"></a>
   <br>
   Natours
   <br>
 </h1>
-
 <h3 align="center">An awesome tour booking site built on top of <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h3>
-
 ---
 
 # Natours - A Tour Booking Site
-<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="18%" /> 
-Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, tour management for booking tours, as well as checking tours map and users' reviews and ratings. Moreover, Natours allows users to update their profiles with a range of personal details such as their username, photo, email, and password. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
+<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="25%" /> 
+Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, Users can search for tours, book them, manage their bookings, and update their profiles. The app also provides API endpoints for accessing information about tours, tour stats, top 5 cheap tours, and tours within a radius. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
 
 
 # Table of Contents
@@ -116,6 +114,7 @@ Natours was built using the following technologies:
 * [Postman](https://www.getpostman.com/) - API testing
 * [Mailtrap](https://mailtrap.io/) & [Mailgun](https://www.mailgun.com/) - Email delivery platform
 * [Render](https://render.com/) - Cloud platform
+* It also utilizes ESLint and Prettier for code formatting and style.
 
 ## Deployment
 Coming soon!
