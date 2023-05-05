@@ -52,18 +52,37 @@ Home Page            |  Tour Details
 
 Payment Process            |  Booked Tours
 :-------------------------:|:-------------------------:
-A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" />  | Users can view a list of all the tours they have booked.   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png"  />
+A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="" />  | Users can view a list of all the tours they have booked.   <img src=""  />
   
 User Profile            |  Admin Profile
 :-------------------------:|:-------------------------:
 Users can update their profiles, including their names, profile pictures, email addresses, and passwords.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/user.gif" />  |  Administrators can manage the website and view detailed information about the tours and users.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Admin%20.gif" />
 
+## API Usage and Documentation
+Before using the API, you need to set the variables in Postman depending on your environment (development or production). Simply add:
+```
+- {{URL}} with your hostname as value (Eg. http://127.0.0.1:3000 or http://www.example.com)
+- {{password}} with your user password as value.
+```
+For more info check API Documentation on Postman 👉 : [Natours API Documentation](https://documenter.getpostman.com/view/8689170/SVmzvwpY?version=latest).
+
+- Some API Features: 
+  - 👉 [Tours List]( https://lgope-natours.onrender.com/api/v1/tours)
+  - 👉 [Tours State]( https://lgope-natours.onrender.com/api/v1/tours/tour-stats)
+  - 👉 [Get Top 5 Cheap Tours](https://lgope-natours.onrender.com/api/v1/tours/top-5-cheap)
+  - 👉 [Get Tours Within Radius](https://lgope-natours.onrender.com/api/v1/tours/tours-within/200/center/34.098453,-118.096327/unit/mi)
+
 ---
+
 ## How To Use
 If you want to book a tour through Natours, simply follow the steps given below:
-1. Login to the site.
+1. Sign up or Login to the site with the following email and password.
+  ```
+  - Email. : loulou@example.com
+  - Password : test1234
+  ```
 2. Search for tours that you want to book.
-3. Book a tour.
+3. Choose a tour and Book it.
 4. Proceed to the payment checkout page.
 5. Enter the card details (Test Mode):
   ```
@@ -73,10 +92,27 @@ If you want to book a tour through Natours, simply follow the steps given below:
   ```
 * To access the tour you have booked, go to the "Manage Booking" page located in your user settings. Upon completion of the booking, you will be automatically directed to this page.
 * Keep your profile up-to-date by modifying your username, email, password, and profile picture.
----
 
-## API Usage and Documentation
-Coming soon!
+
+<h2>Installation</h2>
+<p>There are two ways to get the app up and running on your local machine:</p>
+<ol>
+  <li>Fork the app on GitHub</li>
+  <li>Git-clone the app into your local machine</li>
+</ol>
+<p>After that, you need to install all the dependencies by running the following command in your terminal: <code>$ npm i</code></p>
+<p>You will also need to set your environment variables. To set up ESLint and Prettier in VS Code, run the following command: </p>
+<pre><code>$ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev</code></pre>
+<p>Once you have installed the dependencies and set your environment variables, you can use the following commands to build and run the app:</p>
+<ul>
+  <li>To watch the JavaScript files for changes and automatically rebuild, run: <code>$ npm run watch:js</code> </li> 
+  <li>To build the JavaScript files for production, run: <code>$ npm run build:js</code></li>
+  <li>To start the app in development mode, run: <code>$ npm start</code></li> 
+  <li>To start the app in production mode, run: <code>$ npm run start:prod</code></li> 
+  <li>To run the app in debug mode, run: <code>$ npm run debug</code></li> 
+</ul>
+
+---
 
 ## Built With
 <img align="right" alt="GIF"  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/dependencies.png"  width="25%" /> 
@@ -94,21 +130,19 @@ Natours was built using the following technologies:
 * [Render](https://render.com/) - Cloud platform
 * It also utilizes ESLint and Prettier for code formatting and style.
 
-## Deployment
-Coming soon!
-
-## Installation
-Coming soon!
-
 ## Future Updates
-Coming soon!
+- Enable PWA
+- Improve overall UX/UI and fix bugs
+- Render ability for user to write comments
+- Show Recently Viewed Tours and Featured Tours
+- And More ! There's always room for improvement!
 
 ## Acknowledgement
 This project is part of the online course I've taken at Udemy. Thanks to Jonas Schmedtmann for creating this awesome course! Link to the course: [Node.js, Express, MongoDB & More](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp)
 
 
 ## Assistance
-If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via [Email](mailto:mohamed.11021@stemgharbiya.moe.edu.eg). I would be more than happy to help you in any. <br> Thank you for your time and consideration! 🙂
+If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via [Email](mailto:mohamed.11021@stemgharbiya.moe.edu.eg). I would be more than happy to help you in any. Thank you for your time and consideration! 🙂
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"  width="100%"/>
