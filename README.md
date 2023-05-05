@@ -104,11 +104,11 @@ Coming soon!
 Coming soon!
 
 ## Acknowledgement
-* This project is part of the online course I've taken at Udemy. Thanks to Jonas Schmedtmann for creating this awesome course! Link to the course: [Node.js, Express, MongoDB & More](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp)
+This project is part of the online course I've taken at Udemy. Thanks to Jonas Schmedtmann for creating this awesome course! Link to the course: [Node.js, Express, MongoDB & More](https://www.udemy.com/course/nodejs-express-mongodb-bootcamp)
 
 
 ## Assistance
-If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via email at mohamed.11021@stemgharbiya.moe.edu.eg. I would be more than happy to help you in any. <br> Thank you for your time and consideration! 🙂
+If you require any assistance or have any questions or suggestions, please don't hesitate to contact me via [Email](mailto:mohamed.11021@stemgharbiya.moe.edu.eg). I would be more than happy to help you in any. <br> Thank you for your time and consideration! 🙂
 
 <p align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=60&section=footer"  width="100%"/>
