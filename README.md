@@ -7,7 +7,6 @@
 </h1>
 
 # Natours - A Tour Booking Site
-<img align="right" alt="GIF"  src="https://raw.githubusercontent.com/demartini/demartini/master/code.gif"  width="25%" /> 
 Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, Users can search for tours, book them, manage their bookings, and update their profiles. The app also provides API endpoints for accessing information about tours, tour stats, top 5 cheap tours, and tours within a radius. Furthermore, the platform provides a secure and user-friendly credit card payment system to facilitate seamless and safe transactions.
 
 # Table of Contents
