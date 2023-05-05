@@ -14,13 +14,10 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 - <a href="#deployed-version">Deployed Version</a><br>
 - <a href="#key-features">Key Features</a><br>
 - <a href="#demonstration">Demonstration</a><br>
-- <a href="#how-to-use">How To Use</a><br>
 - <a href="#api-usage">API Usage</a><br>
-- <a href="#deployment">Deployment</a><br>
-- <a href="#build-with">Build With</a><br>
-- <a href="#to-do">To-Do</a><br>
+- <a href="#how-to-use">How To Use</a><br>
 - <a href="#installation">Installation</a><br> 
-- <a href="#known-bugs">Known Bugs</a><br>
+- <a href="#build-with">Build With</a><br>
 - <a href="#future-updates">Future Updates</a><br> 
 - <a href="#acknowledgement">Acknowledgement</a><br>
 
@@ -53,7 +50,7 @@ Home Page            |  Tour Details
 
 Payment Process            |  Booked Tours
 :-------------------------:|:-------------------------:
-A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="" />  | Users can view a list of all the tours they have booked.   <img src=""  />
+A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/user.gif" />  | Users can view a list of all the tours they have booked.   <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/user.gif"  />
   
 User Profile            |  Admin Profile
 :-------------------------:|:-------------------------:
@@ -82,7 +79,7 @@ If you want to book a tour through Natours, simply follow the steps given below:
   - Email. : loulou@example.com
   - Password : test1234
   ```
-2. Search for tours that you want to book.
+2. Search for tours you want.
 3. Choose a tour and Book it.
 4. Proceed to the payment checkout page.
 5. Enter the card details (Test Mode):
@@ -102,9 +99,9 @@ If you want to book a tour through Natours, simply follow the steps given below:
   <li>Fork the app on GitHub</li>
   <li>Git-clone the app into your local machine</li>
 </ol>
-<p>After that, you need to install all the dependencies by running the following command in your terminal: <code>$ npm i</code></p>
-<p>You will also need to set your environment variables. To set up ESLint and Prettier in VS Code, run the following command: </p>
-<pre><code>$ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev</code></pre>
+
+<p>After that, you need to install all the dependencies by running the following command in your terminal: <code>$ npm i</code> then you will also need to set your environment variables.</p>
+
 <p>Once you have installed the dependencies and set your environment variables, you can use the following commands to build and run the app:</p>
 <ul>
   <li>To watch the JavaScript files for changes and automatically rebuild, run: <code>$ npm run watch:js</code> </li> 
@@ -114,6 +111,8 @@ If you want to book a tour through Natours, simply follow the steps given below:
   <li>To run the app in debug mode, run: <code>$ npm run debug</code></li> 
 </ul>
 
+* <p>To set up ESLint and Prettier in VS Code, run the following command: </p>
+<pre><code>$ npm i eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-config-airbnb eslint-plugin-node eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react --save-dev</code></pre>
 ---
 
 ## Built With
@@ -130,7 +129,7 @@ Natours was built using the following technologies:
 * [Postman](https://www.getpostman.com/) - API testing
 * [Mailtrap](https://mailtrap.io/) & [Mailgun](https://www.mailgun.com/) - Email delivery platform
 * [Render](https://render.com/) - Cloud platform
-* It also utilizes ESLint and Prettier for code formatting and style.
+* I also utilize [ESLint](https://eslint.org/) and [Prettier](https://prettier.io/) for code formatting and style.
 
 ## Future Updates
 - Enable PWA
