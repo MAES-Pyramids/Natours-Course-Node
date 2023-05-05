@@ -44,19 +44,19 @@ Natours provides a highly interactive and user-friendly interface for users to b
 
 Sign Up Page            |  Login Page | Forget Password
 :-------------------------:|:-------------------------:|:-------------------------:
-<img  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Sign%20.gif" width="333" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/login.gif" width="333" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Forget%20.gif" width="333" />
+<img  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Sign%20.gif" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/login.gif" />  | <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Forget%20.gif" />
 
 Home Page            |  Tour Details
 :-------------------------:|:-------------------------:
-  A highly intuitive and aesthetically pleasing home page that greets users with a visually appealing animation.<img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Home%20.gif" width="500" />  |  Users can view detailed information about tours, including images, ratings, and reviews.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Tour%20.gif" width="500" />
+  A highly intuitive and aesthetically pleasing home page that greets users with a visually appealing animation.<img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Home%20.gif"  />  |  Users can view detailed information about tours, including images, ratings, and reviews.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Tour%20.gif" />
 
 Payment Process            |  Booked Tours
 :-------------------------:|:-------------------------:
-A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" width="500" />  | Users can view a list of all the tours they have booked.   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png" width="500" />
+A streamlined payment process that allows users to pay for their tours quickly and easily. <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/3.png" />  | Users can view a list of all the tours they have booked.   <img src="https://github.com/MohamadSalamaMouse/Natural-Language-Processing/blob/main/resources/Photos/4.png"  />
   
 User Profile            |  Admin Profile
 :-------------------------:|:-------------------------:
-Users can update their profiles, including their names, profile pictures, email addresses, and passwords.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/user.gif" width="500" />  |  Administrators can manage the website and view detailed information about the tours and users.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Admin%20.gif" width="500" />
+Users can update their profiles, including their names, profile pictures, email addresses, and passwords.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/user.gif" />  |  Administrators can manage the website and view detailed information about the tours and users.  <img src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/Admin%20.gif" />
 
 ---
 ## How To Use
