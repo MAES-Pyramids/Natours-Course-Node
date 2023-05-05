@@ -79,7 +79,7 @@ If you want to book a tour through Natours, simply follow the steps given below:
 Coming soon!
 
 ## Built With
-<img align="right" alt="GIF"  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/dependencies.png"  width="20%" /> 
+<img align="right" alt="GIF"  src="https://github.com/MAES-Pyramids/Natours-Course-Node/blob/master/.ReadMeResources/Photos/dependencies.png"  width="25%" /> 
 
 Natours was built using the following technologies:
 * [Express](http://expressjs.com/) - The web framework used 
