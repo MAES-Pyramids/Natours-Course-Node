@@ -93,6 +93,7 @@ If you want to book a tour through Natours, simply follow the steps given below:
 * To access the tour you have booked, go to the "Manage Booking" page located in your user settings. Upon completion of the booking, you will be automatically directed to this page.
 * Keep your profile up-to-date by modifying your username, email, password, and profile picture.
 
+---
 
 <h2>Installation</h2>
 <p>There are two ways to get the app up and running on your local machine:</p>
