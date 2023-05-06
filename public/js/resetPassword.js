@@ -25,7 +25,7 @@ export const resetPassword = async (password, passwordConfirm) => {
   try {
     const res = await axios({
       method: 'patch',
-      url: `http://127.0.0.1:3000/api/v1/users/resetPassword/${window.location.href
+      url: `/api/v1/users/resetPassword/${window.location.href
         .split('/')
         .at(-1)}`,
       data: {

@@ -3,10 +3,12 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { signup } from './signup';
+import { bookTour } from './stripe';
 import { updatesettings } from './updateSettings';
 import { SendTokenEmail, resetPassword } from './resetPassword';
 //-------------------------------------------//
 const mapBox = document.getElementById('map');
+const bookBtn = document.getElementById('book-tour');
 const ResetButton = document.querySelector('#Reset');
 const loginForm = document.querySelector('.form--login');
 const resetForm = document.querySelector('.form--reset');
@@ -81,4 +83,10 @@ if (updatePasswordBtn) {
     );
   });
 }
+if (bookBtn)
+  bookBtn.addEventListener('click', e => {
+    e.target.textContent = 'Processing...';
+    const { tourId } = e.target.dataset;
+    bookTour(tourId);
+  });
 //-------------------------------------------//

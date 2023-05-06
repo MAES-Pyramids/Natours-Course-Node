@@ -9,7 +9,7 @@
     "start": "nodemon server.js",
     "debug": "set NODE_ENV=debugging&& ndb server.js",
     "watch:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js",
-    "build:js": "parcel watch ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
+    "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
   },
   "repository": {
     "type": "git",
@@ -44,6 +44,7 @@
     "pug": "^3.0.2",
     "sharp": "^0.32.1",
     "slugify": "^1.6.5",
+    "stripe": "^12.4.0",
     "validator": "^13.9.0",
     "xss-clean": "^0.1.1"
   },
