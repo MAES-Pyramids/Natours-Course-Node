@@ -41,13 +41,17 @@ app.use(
   helmet.contentSecurityPolicy({
     directives: {
       defaultSrc: ["'self'"],
-      scriptSrc: ["'self'", 'https://api.mapbox.com'],
+      scriptSrc: ["'self'", 'https://api.mapbox.com', 'https://js.stripe.com'],
       workerSrc: ['blob:'],
       objectSrc: ["'none'"],
       styleSrc: ["'self'", 'https:', "'unsafe-inline'"],
       fontSrc: ["'self'", 'https:', 'data:'],
       imgSrc: ["'self'", 'data:'],
-      connectSrc: ["'self'", 'https://api.mapbox.com']
+      connectSrc: [
+        "'self'",
+        'https://api.mapbox.com',
+        'wss://natours-pw5m.onrender.com:54819'
+      ]
     }
   })
 );
