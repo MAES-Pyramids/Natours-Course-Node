@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  <a href="https://lakshman-natours.herokuapp.com/"><img src="https://github.com/lgope/Natours/blob/master/public/img/logo-green-round.png" alt="Natours" width="100"></a>
+  <a href="https://natours-pw5m.onrender.com/"><img src="https://github.com/lgope/Natours/blob/master/public/img/logo-green-round.png" alt="Natours" width="100"></a>
   <br>
   Natours
     <h4 align="center">An Awesome Tour Booking Site BUILT ON TOP OF <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h4>
@@ -22,7 +22,7 @@ Natours is a highly functional tour booking website developed on NodeJS, which o
 - <a href="#acknowledgement">Acknowledgement</a><br>
 
 ## Deployed Version
-You can visit the live demo of Natours by clicking here. 👉 : https://lgope-natours.onrender.com/
+You can visit the live demo of Natours by clicking here. 👉 : https://natours-pw5m.onrender.com/
 
 | Components            | 
 | -------                         |
@@ -65,10 +65,11 @@ Before using the API, you need to set the variables in Postman depending on your
 For more info check API Documentation on Postman 👉 : [Natours API Documentation](https://documenter.getpostman.com/view/8689170/SVmzvwpY?version=latest).
 
 - Some API Features: 
-  - 👉 [Tours List]( https://lgope-natours.onrender.com/api/v1/tours)
-  - 👉 [Tours State]( https://lgope-natours.onrender.com/api/v1/tours/tour-stats)
-  - 👉 [Get Top 5 Cheap Tours](https://lgope-natours.onrender.com/api/v1/tours/top-5-cheap)
-  - 👉 [Get Tours Within Radius](https://lgope-natours.onrender.com/api/v1/tours/tours-within/200/center/34.098453,-118.096327/unit/mi)
+  - 👉 [Tours List](https://natours-pw5m.onrender.com/api/v1/tours)
+  - 👉 [Tours State](https://natours-pw5m.onrender.com/api/v1/tours/tour-stats)
+  - 👉 [Get Top 5 Cheap Tours](https://natours-pw5m.onrender.com/api/v1/tours/top_5_rated)
+  - 👉 [Get Tours Within Radius](https://natours-pw5m.onrender.com/api/v1/tours/tours-within/200/center/34.098453,-118.096327/unit/mi)
+  - 👉 [Get Tours Plans In Each Month](https://natours-pw5m.onrender.com/api/v1/tours/monthly-plan/2021)
 
 ---
 
