@@ -75,7 +75,6 @@ exports.getTourStats = catchAsyncError(async (req, res, next) => {
     {
       $group: {
         _id: { $toUpper: '$difficulty' },
-
         numTours: { $sum: 1 },
         numRatings: { $sum: '$ratingsQuantity' },
         avgRating: { $avg: '$ratingsAverage' },
