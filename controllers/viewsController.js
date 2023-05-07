@@ -1,5 +1,5 @@
 const Tour = require('./../models/toursmodel');
-const Booking = require('./../models/bookingmodel');
+const Booking = require('./../models/bookingModel');
 const AppError = require('./../utils/appError');
 const catchAsyncError = require('./../utils/catchAsyncError');
 
@@ -70,7 +70,7 @@ exports.getAccount = (req, res) => {
   });
 };
 // My Tours page
-exports.getMyTours = catchAsync(async (req, res, next) => {
+exports.getMyTours = catchAsyncError(async (req, res, next) => {
   // 1) Find all bookings
   const bookings = await Booking.find({ user: req.user.id });
 
