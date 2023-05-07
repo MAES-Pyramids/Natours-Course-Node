@@ -51,11 +51,14 @@ app.use(
       connectSrc: [
         "'self'",
         'https://api.mapbox.com',
-        'wss://natours-pw5m.onrender.com:54819'
-      ]
+        'wss://natours-pw5m.onrender.com:54819',
+        'https://checkout.stripe.com'
+      ],
+      frameSrc: ["'self'", 'https://js.stripe.com', 'https://hooks.stripe.com']
     }
   })
 );
+
 // Development logging
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
