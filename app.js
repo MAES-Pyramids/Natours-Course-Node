@@ -2,6 +2,7 @@ const cors = require('cors');
 const path = require('path');
 const morgan = require('morgan');
 const express = require('express');
+const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
 const hpp = require('hpp');
@@ -75,7 +76,7 @@ app.use('/api', limiter);
 // Stripe webhook, BEFORE body-parser, because stripe needs the body as stream
 app.post(
   '/webhook-checkout',
-  express.raw({ type: 'application/json' }),
+  bodyParser.raw({ type: 'application/json' }),
   bookingController.webhookCheckout
 );
 
