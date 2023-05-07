@@ -7,10 +7,11 @@
 </h1>
 
 # Natours - A Tour Booking Site
-Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, and allow them to search for tours, book them, manage their bookings, and also update their profiles. It also provides API endpoints for accessing information about tours such as  tour stats, top 5 cheap tours, and tours within a radius. Furthermore,it provides a secure and user-friendly credit card payment to facilitate seamless and safe transactions.
+Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, and allow them to search for tours, book them, manage their bookings, and also update their profiles. It also provides API endpoints for accessing information about tours such as  tour stats, top 5 cheap tours, and tours within a radius.
+Furthermore, it provides a secure and user-friendly credit card payment to facilitate seamless and safe transactions.
 
 # Table of Contents
-<img align="right" alt="GIF" height="280px" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" /> 
+<img align="right" alt="GIF" height="250px" src="https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif" /> 
 - <a href="#deployed-version">Deployed Version</a><br>
 - <a href="#key-features">Key Features</a><br>
 - <a href="#demonstration">Demonstration</a><br>
@@ -64,7 +65,7 @@ Before using the API, you need to set the variables in Postman depending on your
 ```
 For more info check API Documentation on Postman 👉 : [Natours API Documentation](https://documenter.getpostman.com/view/8689170/SVmzvwpY?version=latest).
 
-- Some API Features: 
+- Some API End-Points: 
   - 👉 [Tours List](https://natours-pw5m.onrender.com/api/v1/tours)
   - 👉 [Tours State](https://natours-pw5m.onrender.com/api/v1/tours/tour-stats)
   - 👉 [Get Top 5 Cheap Tours](https://natours-pw5m.onrender.com/api/v1/tours/top_5_rated)
