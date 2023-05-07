@@ -65,7 +65,7 @@ Before using the API, you need to set the variables in Postman depending on your
 ```
 For more info check API Documentation on Postman 👉 : [Natours API Documentation](https://documenter.getpostman.com/view/8689170/SVmzvwpY?version=latest).
 
-- Some API Features: 
+- Some API End-Points: 
   - 👉 [Tours List](https://natours-pw5m.onrender.com/api/v1/tours)
   - 👉 [Tours State](https://natours-pw5m.onrender.com/api/v1/tours/tour-stats)
   - 👉 [Get Top 5 Cheap Tours](https://natours-pw5m.onrender.com/api/v1/tours/top_5_rated)
