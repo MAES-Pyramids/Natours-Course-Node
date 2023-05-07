@@ -87,7 +87,7 @@ If you want to book a tour through Natours, simply follow the steps given below:
 5. Enter the card details (Test Mode):
   ```
   - Card No. : 4242 4242 4242 4242
-  - Expiry date: 02 / 22
+  - Expiry date: 05 / 25
   - CVV: 222
   ```
 * To access the tour you have booked, go to the "Manage Booking" page located in your user settings. Upon completion of the booking, you will be automatically directed to this page.
