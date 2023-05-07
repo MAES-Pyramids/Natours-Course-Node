@@ -18,6 +18,7 @@ const toursRouter = require('./routes/toursRoutes');
 const viewsRouter = require('./routes/viewsRoutes');
 const usersRouter = require('./routes/usersRoutes');
 const reviewsRouter = require('./routes/reviewsRoutes');
+const bookingsRoutes = require('./routes/bookingRoutes');
 const bookingController = require('./controllers/bookingController');
 //-------------------------------------------//
 const app = express();
@@ -108,6 +109,7 @@ app.use(compression());
 //   next();
 // });
 //--------------Global Routing--------------//
+app.use('/api/v1/bookings', bookingsRoutes);
 app.use('/api/v1/reviews', reviewsRouter);
 app.use('/api/v1/tours', toursRouter);
 app.use('/api/v1/users', usersRouter);
