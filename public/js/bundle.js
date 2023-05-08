@@ -41293,10 +41293,11 @@ var hideAlert = function hideAlert() {
 // type is 'success' or 'error'
 exports.hideAlert = hideAlert;
 var showAlert = function showAlert(type, msg) {
+  var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 7;
   hideAlert();
   var markup = "<div class=\"alert alert--".concat(type, "\">").concat(msg, "</div>");
   document.querySelector('body').insertAdjacentHTML('afterbegin', markup);
-  window.setTimeout(hideAlert, 5000);
+  window.setTimeout(hideAlert, time * 1000);
 };
 exports.showAlert = showAlert;
 },{}],"login.js":[function(require,module,exports) {
@@ -41484,14 +41485,13 @@ var bookTour = /*#__PURE__*/function () {
             sessionId: session.data.session.id
           });
         case 6:
-          _context.next = 12;
+          _context.next = 11;
           break;
         case 8:
           _context.prev = 8;
           _context.t0 = _context["catch"](0);
-          console.log(_context.t0);
           (0, _alerts.showAlert)('error', _context.t0);
-        case 12:
+        case 11:
         case "end":
           return _context.stop();
       }
