@@ -6,6 +6,12 @@
     <h4 align="center">An Awesome Tour Booking Site BUILT ON TOP OF <a href="https://nodejs.org/en/" target="_blank">NodeJS</a>.</h4>
 </h1>
 
+<div align='center'>
+  
+[<img src="https://ucc71e438f2081eb0c659e77c3ad.previews.dropboxusercontent.com/p/thumb/AB5bjWoxSxKHn8QQsDVXiyn8NO93tbpu4VI3lyNDbgNAklHATcI2YGzKEilRvN1yXAUqN7it48NAK4g-ktLl8WKu-txEKz-HDSe7kkKjQDhLQxEr4iDwEIlHMa2NW7ppSlp0OFFifd5QmF5aan3sdiLkvYBsavW8Sqaj3KsM1tb1_70Z2krSDz9CK9pQDBQyymJYfcz_oqS2WTNUQWYZo_G-SNHVnhqmRxbfsWCg2Y0bVlirlhOon6On0lYwDeGzHXRgcJA4dAeIMnMm8kSYDZ8OcquvAmVWjdGUpBHLKs4DMaby1Wt_FZSbJKNoJAjMuQqa2pSKWA8cdByFn27BQidEJwTS3OSJr5MHXtfw_BbGnjtCSdvOsr_A1IcPPBX4dtYRpj0a7HE7sTIZbHg6KHBYj2i8-oMxhQNMkUSSfAEDCw/p.jpeg" width="75%">](https://www.youtube.com/watch?v=NHQDUB-fpTA)
+
+</div>
+
 # Natours - A Tour Booking Site
 Natours is a highly functional tour booking website developed on NodeJS, which offers a wide array of features. These include authentication and authorization, providing users with the ability to log in and out of their accounts, and allow them to search for tours, book them, manage their bookings, and also update their profiles. It also provides API endpoints for accessing information about tours such as  tour stats, top 5 cheap tours, and tours within a radius.
 Furthermore, it provides a secure and user-friendly credit card payment to facilitate seamless and safe transactions.
